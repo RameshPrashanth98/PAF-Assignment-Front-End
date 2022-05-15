@@ -17,8 +17,7 @@
 			<div class="col-6">
 				<h1>Bill Management</h1>
 				<form id="formBill" name="formBill">
-					Bill Id: <input id="billId" name="billId"
-						type="text" class="form-control form-control-sm"> <br>
+					
 					User Id: <input id="userId"
 						name="userId" type="text"
 						class="form-control form-control-sm"> <br> 

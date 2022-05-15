@@ -30,9 +30,9 @@ if (status != true)
 var type = ($("#hideUsageInformationIDSave").val() == "") ? "POST" : "PUT"; 
  $.ajax( 
  { 
- url : "UsageInformationAPI", 
+ url : "BillAPI", 
  type : type, 
- data : $("#formUsageInformation").serialize(), 
+ data : $("#formBill").serialize(), 
  dataType : "text", 
  complete : function(response, status) 
  { 
@@ -73,11 +73,13 @@ $("#formUsageInformation")[0].reset();
 // UPDATE==========================================
 $(document).on("click", ".btnUpdate", function(event)
 		{ 
-		$("#hideUsageInformationIDSave").val($(this).data("usageid")); 
-		 $("#userName").val($(this).closest("tr").find('td:eq(0)').text()); 
-		 $("#address").val($(this).closest("tr").find('td:eq(1)').text()); 
-		 $("#noOfUnit").val($(this).closest("tr").find('td:eq(2)').text()); 
-		 $("#month").val($(this).closest("tr").find('td:eq(3)').text()); 
+		$("#hideUsageInformationIDSave").val($(this).data("bid")); 
+		 $("#userId").val($(this).closest("tr").find('td:eq(0)').text()); 
+		 $("#pastUnitRead").val($(this).closest("tr").find('td:eq(1)').text()); 
+		 $("#newUnitRead").val($(this).closest("tr").find('td:eq(2)').text()); 
+		 $("#noOfunits").val($(this).closest("tr").find('td:eq(3)').text()); 
+		 $("#unitPrice").val($(this).closest("tr").find('td:eq(4)').text());
+		 $("#totalPrice").val($(this).closest("tr").find('td:eq(5)').text());
 		 
 		});
 
@@ -88,9 +90,9 @@ $(document).on("click", ".btnRemove", function(event)
 		{ 
 		 $.ajax( 
 		 { 
-		 url : "UsageInformationAPI", 
+		 url : "BillAPI", 
 		 type : "DELETE", 
-		 data : "usageID=" + $(this).data("usageid"),
+		 data : "usageID=" + $(this).data("bid"),
 		 dataType : "text", 
 		 complete : function(response, status) 
 		 { 
@@ -129,11 +131,7 @@ if (status == "success")
 // CLIENT-MODEL================================================================
 function validateUsageForm()
 {
-	// Bill Id
-	if ($("#billId").val().trim() == "")
-	{
-	return "Insert Bill ID";
-	}
+
 	// User ID
 	if ($("#userId").val().trim() == "")
 	{

@@ -64,7 +64,8 @@ public class Bill {
 				}
 				output = "<table border='1'><tr><th>Bill ID</th><th>User ID</th>"
 						+ "<th>Previous Unit Read</th><th>New Unit Read</th>"
-						+ "<th>No of Units</th><th>Unit Price</th><th>Total Bill</th></tr>";
+						+ "<th>No of Units</th><th>Unit Price</th><th>Total Bill</th>"
+						+ "<th>Update</th>  <th>Remove</th></tr>";
 				String query= "select* from bills";
 				Statement stmt = con.createStatement();
 				ResultSet rs = stmt.executeQuery(query);
@@ -86,6 +87,12 @@ public class Bill {
 					output += "<td>"+NoofUnits+"</td>";
 					output += "<td>"+Unitprice+"</td>";
 					output += "<td>"+Totalbill+"</td>";
+					
+					// buttons
+					 output += "<td><input name='btnUpdate' type='button' value='Update' "
+							 + "class='btnUpdate btn btn-secondary' data-usageid='" + BillID + "'></td>"
+							 + "<td><input name='btnRemove' type='button' value='Remove' "
+							 + "class='btnRemove btn btn-danger' data-usageid='" + BillID + "'></td></tr>"; 
 					
 				}
 				con.close();
