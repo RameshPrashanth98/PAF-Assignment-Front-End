@@ -25,7 +25,7 @@ if (status != true)
  return; 
  } 
 
-
+//
 // If valid------------------------
 var type = ($("#hideBillIDSave").val() == "") ? "POST" : "PUT"; 
  $.ajax( 
