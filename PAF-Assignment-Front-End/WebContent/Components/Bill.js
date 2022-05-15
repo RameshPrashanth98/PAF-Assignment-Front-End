@@ -27,7 +27,7 @@ if (status != true)
 
 
 // If valid------------------------
-var type = ($("#hideUsageInformationIDSave").val() == "") ? "POST" : "PUT"; 
+var type = ($("#hideBillIDSave").val() == "") ? "POST" : "PUT"; 
  $.ajax( 
  { 
  url : "BillAPI", 

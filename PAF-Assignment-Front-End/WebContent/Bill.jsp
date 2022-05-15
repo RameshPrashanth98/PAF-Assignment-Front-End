@@ -41,8 +41,9 @@
 						class="form-control form-control-sm"> <br> 
 					
 					<input id="btnSave" name="btnSave" type="button" value="Save"
-						class="btn btn-primary"> <input type="hidden"
-						id="hideUsageInformationIDSave" name="hideUsageInformationIDSave" value="">
+						class="btn btn-primary"> 
+					<input type="hidden"
+						id="hideBillIDSave" name="hideBillIDSave" value="">
 				</form>
 				<div id="alertSuccess" class="alert alert-success"></div>
 				<div id="alertError" class="alert alert-danger"></div>
