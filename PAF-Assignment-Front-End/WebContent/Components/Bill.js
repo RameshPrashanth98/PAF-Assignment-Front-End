@@ -50,7 +50,7 @@ if (status == "success")
  { 
  $("#alertSuccess").text("Successfully saved."); 
  $("#alertSuccess").show(); 
- $("#divUsageInformationGrid").html(resultSet.data); 
+ $("#divBillGrid").html(resultSet.data); 
  } else if (resultSet.status.trim() == "error") 
  { 
  $("#alertError").text(resultSet.data); 
@@ -65,7 +65,7 @@ if (status == "success")
  $("#alertError").text("Unknown error while saving.."); 
  $("#alertError").show(); 
  }
-$("#hideUsageInformationIDSave").val(""); 
+$("#hideBillIDSave").val(""); 
 $("#formUsageInformation")[0].reset(); 
 }
 
@@ -73,7 +73,7 @@ $("#formUsageInformation")[0].reset();
 // UPDATE==========================================
 $(document).on("click", ".btnUpdate", function(event)
 		{ 
-		$("#hideUsageInformationIDSave").val($(this).data("bid")); 
+		$("#hideBillIDSave").val($(this).data("bid")); 
 		 $("#userId").val($(this).closest("tr").find('td:eq(0)').text()); 
 		 $("#pastUnitRead").val($(this).closest("tr").find('td:eq(1)').text()); 
 		 $("#newUnitRead").val($(this).closest("tr").find('td:eq(2)').text()); 
@@ -110,7 +110,7 @@ if (status == "success")
  { 
  $("#alertSuccess").text("Successfully deleted."); 
  $("#alertSuccess").show(); 
- $("#divUsageInformationGrid").html(resultSet.data); 
+ $("#divBillGrid").html(resultSet.data); 
  } else if (resultSet.status.trim() == "error") 
  { 
  $("#alertError").text(resultSet.data); 
