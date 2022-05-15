@@ -60,7 +60,7 @@ public class BillAPI extends HttpServlet {
 	protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		Map paras = getParasMap(request); 
-		 String output = billObj.updateBills(paras.get("billId").toString(),
+		 String output = billObj.updateBills(paras.get("hideUsageInformationIDSave").toString(),
 				 
 				 							paras.get("userId").toString(), 
 				 							paras.get("pastUnitRead").toString(), 
